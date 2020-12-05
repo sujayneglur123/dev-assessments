@@ -11,10 +11,18 @@
  * @returns  {Object[]}
  */
 module.exports = function test1() {
-  let results;
+  const records = require("./test_data.json");
+  return records.map(record => {
+    return {
+      ...record,
+      example: `${record.first_name} ${record.last_name} says ${record.catchphrase}`,
+    };
+  });
+  // let results;
 
   // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
   // them and start fresh.
 
-  return results;
+  // return results;
 };
+

@@ -12,10 +12,17 @@
  * @returns  {Object[]}
  */
 module.exports = function test2() {
-  let results;
+  const test1 = require("../test_1");
+  const resultsFromTest1 = test1();
+  const lastNameRequired = "Simpson";
+  return resultsFromTest1.filter(result => result.last_name.includes(lastNameRequired));
+  /**
+   * For case insensitive comparison
+   * return resultsFromTest1.filter(result => result.last_name.toLowerCase().includes(lastNameRequired.toLowerCase()))
+   */
 
-  // Write your code here.  The pre-written lines above and below are just suggestions, feel free to delete
-  // them and start fresh.
-
-  return results;
+   /**
+   * The ES5 way
+   * return resultsFromTest1.filter(result => result.last_name.indexOf(lastNameRequired) !== -1);
+   */
 };
